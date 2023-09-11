@@ -10,9 +10,13 @@ public class Universidad_Guia85 {
 
     public static void main(String[] args) {
 
-        Alumno Pedro = new Alumno(23456789,"Perez","Pedro",LocalDate.of(1980, 4, 15),true);
-        AlumnoData alu = new AlumnoData();
-        alu.guardarAlumno(Pedro);
+        //Alumno Pedro = new Alumno(23456789,"Perez","Cacho J",LocalDate.of(1980, 4, 15),true);
+        //Alumno Juan = new Alumno(23497890,"Moreno","Juan",LocalDate.of(1985, 8, 10),true);
+        
+//        AlumnoData alu = new AlumnoData();
+//        alu.guardarAlumno(Juan);
+        
+        
     }
     
 }
