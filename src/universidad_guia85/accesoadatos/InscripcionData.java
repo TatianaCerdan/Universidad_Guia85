@@ -60,7 +60,7 @@ public class InscripcionData {
     
     public List<Inscripcion> obtenerInscripcion(){
             
-            List<Inscripcion> inscripciones = new ArrayList<>();
+            List<Inscripcion> inscrip = new ArrayList<>();
             try {
             String sql = "SELECT * FROM inscripcion";
             PreparedStatement ps = con.prepareStatement(sql);
@@ -70,7 +70,7 @@ public class InscripcionData {
             inscripcion = new Inscripcion();
             inscripcion.setIdInscripcion(rs.getInt("idInscripcion"));
             inscripcion.setNota(rs.getDouble("nota"));
-            inscripcion.setAlumno(rs.getInt("idAlumno"));
+            
             }
             
             
