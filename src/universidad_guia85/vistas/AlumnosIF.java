@@ -7,6 +7,7 @@ package universidad_guia85.vistas;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import universidad_guia85.accesoadatos.AlumnoData;
 import universidad_guia85.entidades.Alumno;
 
@@ -171,8 +172,8 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
      int dni = Integer.parseInt(jtDocumento.getText());
         String apellido = jtApellido.getText();
         String nombre = jtNombre.getText();
-        LocalDate fechaNacimiento = jdFecha;
-        boolean coincidencia = false;
+        LocalDate fechaNacimiento = jdFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        //boolean coincidencia = false;
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jtDocumentoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDocumentoKeyReleased
