@@ -5,6 +5,11 @@
  */
 package universidad_guia85.vistas;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import universidad_guia85.accesoadatos.AlumnoData;
+import universidad_guia85.entidades.Alumno;
+
 /**
  *
  * @author violetalapobre
@@ -16,6 +21,7 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
      */
     public AlumnosIF() {
         initComponents();
+        AlumnoData aluData=new AlumnoData();
     }
 
     /**
@@ -59,7 +65,18 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Fecha de Nacimiento:");
 
+        jtDocumento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtDocumentoKeyReleased(evt);
+            }
+        });
+
         jbBuscar.setText("Buscar");
+        jbBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBuscarActionPerformed(evt);
+            }
+        });
 
         jbNuevo.setText("Nuevo");
 
@@ -74,9 +91,9 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
@@ -93,7 +110,6 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jbBuscar))))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jbNuevo))
@@ -150,6 +166,18 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
+     int dni = Integer.parseInt(jtDocumento.getText());
+        String apellido = jtApellido.getText();
+        String nombre = jtNombre.getText();
+        LocalDate fechaNacimiento = jdFecha;
+        boolean coincidencia = false;
+    }//GEN-LAST:event_jbBuscarActionPerformed
+
+    private void jtDocumentoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDocumentoKeyReleased
+        
+    }//GEN-LAST:event_jtDocumentoKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
