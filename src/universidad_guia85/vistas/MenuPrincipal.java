@@ -5,15 +5,16 @@
  */
 package universidad_guia85.vistas;
 
+import java.util.TreeSet;
+import universidad_guia85.accesoadatos.AlumnoData;
+
 /**
  *
  * @author Guillermo Rodriguez
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form MenuPrincipal
-     */
+ public static TreeSet<AlumnoData> listaAlumnoData = new TreeSet<>();
+ 
     public MenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);

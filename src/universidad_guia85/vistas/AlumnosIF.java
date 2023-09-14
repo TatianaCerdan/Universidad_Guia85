@@ -170,10 +170,24 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
 
     private void jbBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBuscarActionPerformed
      int dni = Integer.parseInt(jtDocumento.getText());
-        String apellido = jtApellido.getText();
-        String nombre = jtNombre.getText();
-        LocalDate fechaNacimiento = jdFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //boolean coincidencia = false;
+ 
+     try{
+       AlumnoData x=new AlumnoData();
+       jtApellido.setText(x.buscarAlumnoPorDni(dni).getApellido());
+       jtNombre.setText(x.buscarAlumnoPorDni(dni).getNombre());
+       if(x.buscarAlumnoPorDni(dni).isEstado()== true){
+           jrbEstado.setSelected(true);
+       }
+       
+     } catch(NullPointerException ex){
+         
+     } catch(NumberFormatException ez){
+         
+     }
+       
+       
+
+        
     }//GEN-LAST:event_jbBuscarActionPerformed
 
     private void jtDocumentoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtDocumentoKeyReleased
