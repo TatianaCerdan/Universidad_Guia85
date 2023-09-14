@@ -8,6 +8,7 @@ package universidad_guia85.vistas;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import universidad_guia85.accesoadatos.AlumnoData;
 import universidad_guia85.entidades.Alumno;
 
@@ -39,7 +40,7 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jlFechaNac = new javax.swing.JLabel();
         jtDocumento = new javax.swing.JTextField();
         jtApellido = new javax.swing.JTextField();
         jtNombre = new javax.swing.JTextField();
@@ -64,7 +65,7 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Estado:");
 
-        jLabel6.setText("Fecha de Nacimiento:");
+        jlFechaNac.setText("Fecha de Nacimiento:");
 
         jtDocumento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -112,7 +113,7 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
                                 .addComponent(jbBuscar))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
+                            .addComponent(jlFechaNac)
                             .addComponent(jbNuevo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,7 +155,7 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
                     .addComponent(jrbEstado))
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
+                    .addComponent(jlFechaNac)
                     .addComponent(jdFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -179,6 +180,12 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
            jrbEstado.setSelected(true);
        }
        
+       if (jdFecha.getDate()!=null){
+           
+           LocalDate fechaN = jdFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //
+           DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+       }
+       
      } catch(NullPointerException ex){
          
      } catch(NumberFormatException ez){
@@ -201,13 +208,13 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JButton jbBuscar;
     private javax.swing.JButton jbEliminar;
     private javax.swing.JButton jbGuardar;
     private javax.swing.JButton jbNuevo;
     private javax.swing.JButton jbSalir;
     private com.toedter.calendar.JDateChooser jdFecha;
+    private javax.swing.JLabel jlFechaNac;
     private javax.swing.JRadioButton jrbEstado;
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtDocumento;
