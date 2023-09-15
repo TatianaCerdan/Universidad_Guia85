@@ -96,11 +96,6 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
         });
 
         jbSalir.setText("Salir");
-        jbSalir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jbSalirMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,10 +235,6 @@ public class AlumnosIF extends javax.swing.JInternalFrame {
 //     alumno = jtDocumento.getText(Integer.parseInt(x.guardarAlumno(alumno.getDni())));
    
     }//GEN-LAST:event_jbGuardarActionPerformed
-
-    private void jbSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbSalirMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jbSalirMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

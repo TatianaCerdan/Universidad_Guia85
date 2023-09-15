@@ -197,9 +197,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jbSalirMouseClicked"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jtFecha">
     </Component>
