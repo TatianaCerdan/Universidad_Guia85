@@ -26,7 +26,7 @@ public class AlumnoData {
     }
 
     public void guardarAlumno(Alumno alumno) {
-        String sql = "INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado) "
+        String sql = "INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado)"
                 + "VALUES(?,?,?,?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -161,12 +161,12 @@ public class AlumnoData {
         }
     }
 
-    public void eliminarAlumno(int id) {
+    public void eliminarAlumno(int dni) {
 
         try {
-            String sql = "UPDATE alumno SET estado = 0 WHERE idAlumno = ? "; 
+            String sql = "UPDATE alumno SET estado = 0 WHERE dni = ? "; 
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, dni);
             int fila = ps.executeUpdate();
             if(fila==1){
                 mensaje("Se elimino el alumno");
