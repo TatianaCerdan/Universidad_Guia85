@@ -135,6 +135,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(MenuConsultas);
 
         MenuSalir.setText("Salir");
+        MenuSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MenuSalirMouseClicked(evt);
+            }
+        });
+        MenuSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuSalirActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(MenuSalir);
 
         setJMenuBar(jMenuBar1);
@@ -217,6 +227,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Escritorio.add(camif);
         Escritorio.moveToFront(camif);
     }//GEN-LAST:event_MenuAlumporMateriaActionPerformed
+
+    private void MenuSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuSalirActionPerformed
+       
+    }//GEN-LAST:event_MenuSalirActionPerformed
+
+    private void MenuSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_MenuSalirMouseClicked
 
     /**
      * @param args the command line arguments
